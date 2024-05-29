@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "sass": "^1.71.1"
+  },
+  "dependencies": {
+    "latest": "^0.2.0"
+  }
+}

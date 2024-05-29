@@ -1,0 +1,308 @@
+// Setup - start
+@use "sass:color";
+@use "sass:list";
+
+$breakpoint__: 450px;
+$breakpoint__x-small: 450px;
+$breakpoint__small: 768px;
+$breakpoint__medium: 992px;
+$breakpoint__large: 1200px;
+$breakpoint__x-large: 1700px;
+
+$colour-primary: #292929;
+$colour-secondary: #dddddd;
+$colour-highlight: green;
+$colour-grey: #505050;
+$colour-debug: hotpink;
+
+$text-size: 16px;
+
+$padding__standard: 2rem;
+$padding__thin: calc($padding__standard / 2);
+
+$margin__standard: $padding__standard;
+$margin__thin: calc($margin__standard / 2);
+
+@mixin reset-img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+}
+
+// Takes a number of columns and optionally their widths
+@mixin single-row-grid($number-of-columns, $column-widths: (auto)) {
+	$columns: "";
+	@if (
+		// Check to make sure there is a width for each column
+		list.length($column-widths) !=
+			($number-of-columns) and
+			list.length($column-widths) !=
+			1
+	) {
+		@error "Must be as many column widths as number of columns";
+	} @else if (list.length($column-widths) == 1) {
+		@for $i from 1 through $number-of-columns {
+			$columns: #{$columns} #{$column-widths};
+		}
+	} @else {
+		@for $i from 1 through $number-of-columns {
+			$columns: #{$columns} #{list.nth($column-widths, $i)};
+		}
+	}
+	display: grid;
+	@debug "columns: #{$columns}";
+	grid-template-columns: $columns;
+	grid-template-rows: 100%; // Stops child elements from breaking bounds
+}
+// Setup and definitions - end
+
+/* General stylings and helper classes - start */
+:root {
+}
+
+html {
+	font-size: $text-size;
+	font-family: "Times New Roman", Times, serif;
+}
+
+* {
+	box-sizing: border-box;
+	// border: 2px solid $colour-debug; // Debug borders
+}
+
+body {
+	/* Setup grid to allow side bars */
+	display: grid;
+	grid: 15vh auto / 100vw;
+	grid-template-areas: "header" "main";
+	overflow-x: hidden;
+}
+
+h2 {
+	font-size: 1.7rem;
+}
+
+/* Standardise images to aid formatting */
+.img-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	max-height: 100%;
+
+	img {
+		@include reset-img;
+	}
+}
+/* General stylings and helper classes - end */
+
+/* Header stuff - start */
+header {
+	z-index: 10;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	border-bottom: 0.44rem solid $colour-highlight;
+	border-radius: 0 0 1rem 1rem;
+	box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+
+	grid-area: header;
+	background-color: $colour-secondary;
+	@include single-row-grid(3, 2fr 1fr 2fr);
+
+	.header__item {
+		padding: 0 $padding__thin;
+	}
+
+	/* Main logo */
+	.main-logo {
+		grid-column: 2;
+
+		img {
+			padding: calc($padding__thin/2) 0;
+		}
+	}
+
+	nav {
+		grid-column: 3;
+		margin-right: $margin__standard;
+	}
+
+	/* Outer nav element */
+	.nav {
+		@include single-row-grid(1);
+	}
+
+	/* Inner ul element */
+	.navigation-list {
+		grid-column: 1;
+		width: 100%;
+		padding-inline-start: 0;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-items: center;
+		gap: 0rem $margin__standard;
+
+		li {
+			display: inline-block;
+
+			a {
+				font-variant: small-caps;
+				font-weight: 800;
+				font-size: 2rem;
+				text-decoration: none;
+				color: $colour-highlight;
+
+				&:hover {
+					color: color.adjust($colour-highlight, $saturation: -30%);
+				}
+				&:visited {
+					color: $colour-highlight;
+				}
+			}
+		}
+	}
+}
+/* Header stuff - end */
+
+@mixin flow-container {
+	display: flex;
+	flex-direction: column;
+	@media only screen and (min-width: 992px) {
+		flex-direction: row;
+	}
+	flex-wrap: nowrap;
+	gap: $margin__thin;
+	margin-bottom: $margin__standard;
+}
+
+main {
+	width: 100%;
+	background-color: $colour-primary;
+	color: $colour-secondary;
+	grid-area: main;
+	padding: $padding__standard;
+
+	> section {
+		padding-bottom: $padding__standard;
+		border-bottom: 0.1rem solid $colour-highlight;
+		margin-bottom: $margin__standard;
+	}
+}
+
+.home-section {
+	> div {
+		@include flow-container();
+	}
+
+	.home-section__title {
+		font-size: 3rem;
+		font-weight: bold;
+		text-align: center;
+		margin-block-start: 0;
+	}
+
+	.home-section__text {
+		font-size: 1.4rem;
+		flex: 1 1;
+
+		> p {
+			margin-block-start: 0;
+		}
+	}
+
+	.home-section__photo {
+		flex-basis: 20rem;
+		flex: 1 1;
+		min-width: 250px;
+		// max-height: 60vh;
+		overflow: hidden;
+
+		> img {
+			border-radius: 3rem;
+		}
+	}
+}
+
+.about-section {
+}
+
+.contact-section {
+	.contact-section__title {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: $breakpoint__x-small) {
+	html {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-width: calc($breakpoint__x-small + 1px)) {
+	html {
+		font-size: 14px;
+	}
+	.about-section {
+		#about-section__media-1 {
+			.polaroid {
+				.polaroid__caption {
+					p {
+						font-size: 1.4rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-width: $breakpoint__small) {
+	html {
+		font-size: 14px;
+	}
+	.about-section {
+		#about-section__media-1 {
+			.polaroid {
+				.polaroid__caption {
+					p {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media only screen and (min-width: $breakpoint__medium) {
+	html {
+		font-size: 16px;
+	}
+	body {
+		grid: 15vh auto / 8vw 84vw 8vw;
+		grid-template-areas: "header header header" "side-bars__left main side-bars__right";
+	}
+	.side-bars {
+		display: initial;
+	}
+	.about-section {
+		#about-section__media-1 {
+			.polaroid {
+				.polaroid__caption {
+					p {
+						font-size: initial;
+					}
+				}
+			}
+		}
+		#about-section__media-2 {
+			> * {
+				width: 100%;
+			}
+		}
+	}
+}
+@media only screen and (min-width: $breakpoint__large) {
+	html {
+		font-size: 18px;
+	}
+}
