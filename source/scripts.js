@@ -24,3 +24,24 @@ function loadHeader() {
 		});
 	}
 }
+
+function loadGallery() {
+	const gallerySection = document.querySelector(".gallery-section");
+	const galleryButton = gallerySection.querySelector(".gallery__button");
+
+	galleryButton.addEventListener("click", toggleState);
+
+	// let currentState = "expanded"; // Defaults to expanded in case JS doesn't load
+
+	toggleState(); // As soon as the js loads though it collapses down
+
+	function toggleState() {
+		// const startState = currentState;
+
+		if (gallerySection.classList.toggle("gallery-section--collapsed")) {
+			gallerySection.scrollIntoView({ behavior: "smooth", block: "nearest" });
+		}
+		galleryButton.classList.toggle("gallery__button--collapsed");
+		console.log("toggled state");
+	}
+}

@@ -1,27 +1,34 @@
 /* General stylings and helper classes - start */
-:root {
-  --swiper-theme-color: #af0502;
-}
-
 html {
   font-size: 16px;
+  font-weight: 400;
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
 }
 
 body {
   /* Setup grid to allow side bars */
-  display: grid;
-  grid: 15vh auto/100vw;
-  grid-template-areas: "header" "main";
   overflow-x: hidden;
 }
 
+h1 {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+}
+
 h2 {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   font-size: 1.7rem;
+}
+
+h3 {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Standardise images to aid formatting */
@@ -39,68 +46,24 @@ h2 {
   margin: auto;
 }
 
-.polaroid {
-  /* Polaroid is 3.5" x 4.2"
-  3.5 : 4.2 = 5 : 6 */
-  aspect-ratio: 5/6;
-  display: grid;
-  /* Border around photo 0.2"
-  Photo is 3.1"
-  Leaving 0.7" at the bottom for caption (not including the bottom photo border)
-  Turning these into fractions of width/height whilst keeping the resulting
-  absolute values equal results in the following abbomination - I'm sorry
-  2/42 + 31/42 + 2/42 + 7/42 = 42/42-> Rows = height = 4.2" = 42units
-  2/35 + 31/35 + 2/35 = 35/35 -> Columns = widths = 3.5" = 35units
-  42 * 35 = 1470
-  70/1470 + 1085/1470 + 70/1470 + 245/1470 = 1470/1470  -> Rows
-  84/1470  + 1302/1470 + 84/1470 = 1470/1470 -> Columns
-   */
-  grid-template-rows: 70fr 1085fr 70fr 245fr;
-  grid-template-columns: 84fr 1302fr 84fr;
-  grid-template-areas: "padding__top padding__top padding__top" "padding__left photo padding__right" "caption caption caption" "caption caption caption";
-  background-color: whitesmoke;
-  border-radius: 0.5%;
-}
-.polaroid .polaroid__photo {
-  grid-area: photo;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.polaroid .polaroid__photo img {
-  filter: sepia(25%);
-  height: 100%;
-  object-fit: cover;
-}
-.polaroid .polaroid__caption {
-  grid-area: caption;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
-  padding-top: 0;
-  min-height: 100%;
-}
-.polaroid .polaroid__caption p {
-  transform-origin: top;
-  text-align: center;
-  font-size: 0.7rem;
-  font-family: "Permanent Marker", cursive;
-  color: black;
+.text-box {
+  border: 0.5rem double #006942;
+  padding: 1rem;
+  margin: 2rem 0;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* General stylings and helper classes - end */
 /* Header stuff - start */
 header {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   z-index: 10;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border-bottom: 0.44rem solid #af0502;
-  border-radius: 0 0 1rem 1rem;
+  border-bottom: 0.44rem solid #006942;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
-  grid-area: header;
-  background-color: #dddddd;
+  background-color: #0d0d0d;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-template-rows: 100%;
@@ -111,10 +74,10 @@ header {
 header .header__item {
   padding: 0 1rem;
 }
-header .fools-logo {
+header .main-logo {
   grid-column: 2;
 }
-header .fools-logo img {
+header .main-logo img {
   padding: 0.5rem 0;
 }
 header nav {
@@ -144,57 +107,26 @@ header .navigation-list li a {
   font-weight: 800;
   font-size: 2rem;
   text-decoration: none;
-  color: #af0502;
+  color: #006942;
 }
 header .navigation-list li a:hover {
-  color: #941f1d;
+  color: #10593e;
 }
 header .navigation-list li a:visited {
-  color: #af0502;
-}
-
-/* Social media links container */
-.socials {
-  grid-column: 1;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 100%;
-  gap: 2rem;
-  margin-left: 2rem;
-}
-.socials a {
-  margin: 1rem 0;
-}
-.socials div {
-  margin: 15% 1rem;
+  color: #006942;
 }
 
 /* Header stuff - end */
-/* Side bars - start */
-.side-bars {
-  display: none;
-  background-color: #dddddd;
-}
-
-#side-bars__left {
-  grid-area: side-bars__left;
-}
-
-#side-bars__right {
-  grid-area: side-bars__right;
-}
-
-/* Side bars - end */
 main {
+  font-family: "Times New Roman", Times, serif;
   width: 100%;
-  background-color: #292929;
-  color: #dddddd;
-  grid-area: main;
+  background-image: url("../assets/img/paper.png");
+  color: #0d0d0d;
   padding: 2rem;
 }
 main > section {
   padding-bottom: 2rem;
-  border-bottom: 0.1rem solid #af0502;
+  border-bottom: 0.1rem solid #006942;
   margin-bottom: 2rem;
 }
 
@@ -233,132 +165,51 @@ main > section {
   border-radius: 3rem;
 }
 
-.about-section > div {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  gap: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 2.5rem;
-  border-bottom: 0.1rem solid #505050;
-}
-@media only screen and (min-width: 992px) {
-  .about-section > div {
-    flex-direction: row;
-  }
-}
-.about-section > div:nth-child(2n) {
-  flex-wrap: wrap-reverse;
-}
-.about-section > div:last-child {
-  padding-bottom: 0rem;
-  border-bottom: none;
-}
-.about-section .about-section__text {
-  flex: 2 1;
-}
-.about-section .about-section__text .text__title {
-  margin-block-start: 0;
-  text-align: center;
-}
-.about-section .about-section__text .text__body {
-  text-align: justify;
-}
-.about-section .about-section__text .text__body > p {
-  margin-block-start: 0;
-}
-.about-section .about-section__media {
-  min-width: 250px;
-  overflow: hidden;
+.gallery-section {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 0;
 }
-.about-section #about-section__media-1 {
-  flex: 1 1;
-  overflow: visible;
-  margin-left: 2rem;
+.gallery-section--collapsed {
+  overflow-y: hidden;
+  max-height: 15rem;
+}
+.gallery-section .gallery__button {
+  border: 2px dashed rgb(247, 7, 127);
+  width: 100%;
+  height: 5rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgb(255, 255, 255));
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-.about-section #about-section__media-1 .polaroid .polaroid__caption p {
-  font-size: 1.2rem;
+.gallery-section .gallery__button p {
+  display: block;
+  margin: auto;
+  transition: transform 0.5s ease-out;
 }
-.about-section #about-section__media-1 .swiper {
-  width: 60%;
+.gallery-section .gallery__button:hover {
+  cursor: pointer;
 }
-.about-section #about-section__media-2 {
-  flex: 1 1;
+.gallery-section .gallery__button--collapsed {
+  position: absolute;
+  bottom: 0;
 }
-.about-section #about-section__media-2 > * {
-  border-radius: 3rem;
+.gallery-section .gallery__button--collapsed p {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-out;
 }
 
-.gallery-section {
-  max-width: 100%;
-  padding-top: 1rem;
-  overflow: hidden;
-}
-.gallery-section .gallery__carousel {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: visible;
-  position: relative;
-  --swiper-navigation-size: 3rem;
-}
-.gallery-section .gallery__carousel .swiper-button-next,
-.gallery-section .gallery__carousel .swiper-button-prev {
-  width: auto;
-  height: auto;
-  background-color: rgba(80, 80, 80, 0.9);
-  border-radius: 1rem;
-}
-.gallery-section .gallery__carousel .swiper-button-next:after,
-.gallery-section .gallery__carousel .swiper-button-prev:after {
-  margin: 1rem;
-}
-.gallery-section .gallery__carousel .carousel__slider .swiper-slide-active:hover {
-  z-index: 50;
-}
-.gallery-section .gallery__carousel .carousel__slider .slider__slide .polaroid {
-  width: 30vw;
-}
-@media only screen and (min-width: 1351px) {
-  .gallery-section .gallery__carousel .carousel__slider .slider__slide .polaroid .polaroid__caption p {
-    font-size: 1.7rem;
-  }
-}
-@media only screen and (min-width: 801px) and (max-width: 1350px) {
-  .gallery-section .gallery__carousel .carousel__slider .slider__slide .polaroid .polaroid__caption p {
-    font-size: 1.5rem;
-  }
-}
-@media only screen and (min-width: 451px) and (max-width: 800px) {
-  .gallery-section .gallery__carousel .carousel__slider .slider__slide .polaroid .polaroid__caption p {
-    font-size: 1rem;
-  }
-}
-.gallery-section .gallery__carousel .swiper-pagination {
-  display: flex;
-  position: relative;
-  width: max-content;
-  margin: auto;
-  align-items: center;
-  background-color: rgba(80, 80, 80, 0.8);
-  border-radius: 0.75rem;
-  gap: 0.75rem;
-  padding: 0 0.75rem;
-  --swiper-pagination-bullet-inactive-color: #dddddd;
-  --swiper-pagination-bullet-inactive-opacity: 0.7;
-}
-.gallery-section .gallery__carousel .swiper-pagination-bullet {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  margin-left: 0;
-  margin-right: 0;
+.pretend-image {
+  display: block;
+  width: 250px;
+  height: 250px;
+  border: 3px solid rgb(247, 7, 127);
 }
 
 .contact-section .contact-section__title {
@@ -374,31 +225,18 @@ main > section {
   html {
     font-size: 14px;
   }
-  .about-section #about-section__media-1 .polaroid .polaroid__caption p {
-    font-size: 1.4rem;
-  }
 }
 @media only screen and (min-width: 768px) {
   html {
     font-size: 14px;
-  }
-  .about-section #about-section__media-1 .polaroid .polaroid__caption p {
-    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 992px) {
   html {
     font-size: 16px;
   }
-  body {
-    grid: 15vh auto/8vw 84vw 8vw;
-    grid-template-areas: "header header header" "side-bars__left main side-bars__right";
-  }
   .side-bars {
     display: initial;
-  }
-  .about-section #about-section__media-1 .polaroid .polaroid__caption p {
-    font-size: initial;
   }
   .about-section #about-section__media-2 > * {
     width: 100%;

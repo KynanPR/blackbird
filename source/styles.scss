@@ -9,13 +9,15 @@ $breakpoint__medium: 992px;
 $breakpoint__large: 1200px;
 $breakpoint__x-large: 1700px;
 
-$colour-primary: #292929;
-$colour-secondary: #dddddd;
-$colour-highlight: green;
+$colour-primary: #dacbb7;
+$colour-secondary: #0d0d0d;
+$colour-highlight: #006942;
 $colour-grey: #505050;
-$colour-debug: hotpink;
+$colour-debug: rgb(247, 7, 127);
 
 $text-size: 16px;
+$general-font: "Times New Roman", Times, serif;
+$special-font: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
 
 $padding__standard: 2rem;
 $padding__thin: calc($padding__standard / 2);
@@ -63,7 +65,8 @@ $margin__thin: calc($margin__standard / 2);
 
 html {
 	font-size: $text-size;
-	font-family: "Times New Roman", Times, serif;
+	font-weight: 400;
+	font-family: $special-font;
 }
 
 * {
@@ -73,14 +76,27 @@ html {
 
 body {
 	/* Setup grid to allow side bars */
-	display: grid;
-	grid: 15vh auto / 100vw;
-	grid-template-areas: "header" "main";
+	// display: grid;
+	// grid: 15vh auto / 100vw;
+	// grid-template-areas: "header" "main";
 	overflow-x: hidden;
 }
 
+h1 {
+	font-family: $special-font;
+}
+
 h2 {
+	font-family: $special-font;
 	font-size: 1.7rem;
+}
+
+h3 {
+	font-family: $special-font;
+}
+
+p {
+	font-family: $general-font;
 }
 
 /* Standardise images to aid formatting */
@@ -95,19 +111,27 @@ h2 {
 		@include reset-img;
 	}
 }
+
+.text-box {
+	border: 0.5rem double $colour-highlight;
+	padding: $padding__thin;
+	margin: $margin__standard 0;
+	font-family: $general-font;
+}
 /* General stylings and helper classes - end */
 
 /* Header stuff - start */
 header {
+	font-family: $special-font;
 	z-index: 10;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	border-bottom: 0.44rem solid $colour-highlight;
-	border-radius: 0 0 1rem 1rem;
+	// border-radius: 0 0 1rem 1rem;
 	box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
 
-	grid-area: header;
+	// grid-area: header;
 	background-color: $colour-secondary;
 	@include single-row-grid(3, 2fr 1fr 2fr);
 
@@ -180,10 +204,12 @@ header {
 }
 
 main {
+	font-family: $general-font;
 	width: 100%;
-	background-color: $colour-primary;
+	background-image: url("../assets/img/paper.png");
+	// background-color: $colour-primary;
 	color: $colour-secondary;
-	grid-area: main;
+	// grid-area: main;
 	padding: $padding__standard;
 
 	> section {
@@ -227,6 +253,66 @@ main {
 	}
 }
 
+.gallery-section {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-content: flex-start;
+	gap: $margin__thin;
+	width: 100%;
+	// max-height: 100rem;
+	padding-bottom: 0;
+	// transition: max-height 5s linear;
+	// overflow-y: scroll;
+
+	&--collapsed {
+		overflow-y: hidden;
+		max-height: 15rem;
+		// transition: max-height 5s ease-out;
+	}
+
+	.gallery__button {
+		border: 2px dashed $colour-debug;
+		width: 100%;
+		height: 5rem;
+		background-image: linear-gradient(
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 1)
+		);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		p {
+			display: block;
+			margin: auto;
+			transition: transform 0.5s ease-out;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&--collapsed {
+			position: absolute;
+			bottom: 0;
+			p {
+				transform: rotate(180deg);
+				transition: transform 0.5s ease-out;
+			}
+		}
+	}
+}
+
+.pretend-image {
+	display: block;
+	width: 250px;
+	height: 250px;
+	border: 3px solid $colour-debug;
+}
+
 .about-section {
 }
 
@@ -247,13 +333,6 @@ main {
 	}
 	.about-section {
 		#about-section__media-1 {
-			.polaroid {
-				.polaroid__caption {
-					p {
-						font-size: 1.4rem;
-					}
-				}
-			}
 		}
 	}
 }
@@ -263,13 +342,6 @@ main {
 	}
 	.about-section {
 		#about-section__media-1 {
-			.polaroid {
-				.polaroid__caption {
-					p {
-						font-size: 2rem;
-					}
-				}
-			}
 		}
 	}
 }
@@ -278,21 +350,12 @@ main {
 		font-size: 16px;
 	}
 	body {
-		grid: 15vh auto / 8vw 84vw 8vw;
-		grid-template-areas: "header header header" "side-bars__left main side-bars__right";
 	}
 	.side-bars {
 		display: initial;
 	}
 	.about-section {
 		#about-section__media-1 {
-			.polaroid {
-				.polaroid__caption {
-					p {
-						font-size: initial;
-					}
-				}
-			}
 		}
 		#about-section__media-2 {
 			> * {
