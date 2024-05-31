@@ -67,12 +67,12 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  left: 0;
+  width: 30%;
   border-bottom: 0.44rem solid #006942;
+  border-right: 0.44rem solid #006942;
   box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
-  background-color: #0d0d0d;
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-  grid-template-rows: 100%;
+  background-color: transparent;
   /* Main logo */
   /* Outer nav element */
   /* Inner ul element */
@@ -80,11 +80,9 @@ header {
 header .header__item {
   padding: 0 1rem;
 }
-header .main-logo {
-  grid-column: 2;
-}
 header .main-logo img {
   padding: 0.5rem 0;
+  border-radius: 50%;
 }
 header nav {
   grid-column: 3;
