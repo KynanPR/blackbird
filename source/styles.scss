@@ -113,10 +113,18 @@ p {
 }
 
 .text-box {
+	h3 {
+		font-family: $special-font;
+		margin-top: 0;
+	}
+	p {
+		font-family: $general-font;
+	}
 	border: 0.5rem double $colour-highlight;
 	padding: $padding__thin;
 	margin: $margin__standard 0;
-	font-family: $general-font;
+	// margin-block-start: 0;
+	// margin-block-end: 0;
 }
 /* General stylings and helper classes - end */
 
@@ -314,6 +322,28 @@ main {
 }
 
 .about-section {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: $margin__standard;
+	> div {
+		@extend .text-box;
+		margin: 0;
+		max-width: 90%; // For larger screens
+
+		&:nth-child(odd) {
+			align-self: flex-start;
+
+			text-align: left;
+		}
+
+		&:nth-child(even) {
+			align-self: flex-end;
+
+			text-align: right;
+		}
+	}
 }
 
 .contact-section {

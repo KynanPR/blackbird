@@ -46,10 +46,16 @@ p {
   margin: auto;
 }
 
-.text-box {
+.text-box, .about-section > div {
   border: 0.5rem double #006942;
   padding: 1rem;
   margin: 2rem 0;
+}
+.text-box h3, .about-section > div h3 {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  margin-top: 0;
+}
+.text-box p, .about-section > div p {
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -210,6 +216,26 @@ main > section {
   width: 250px;
   height: 250px;
   border: 3px solid rgb(247, 7, 127);
+}
+
+.about-section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.about-section > div {
+  margin: 0;
+  max-width: 90%;
+}
+.about-section > div:nth-child(odd) {
+  align-self: flex-start;
+  text-align: left;
+}
+.about-section > div:nth-child(even) {
+  align-self: flex-end;
+  text-align: right;
 }
 
 .contact-section .contact-section__title {
