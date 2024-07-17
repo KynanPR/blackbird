@@ -1,285 +1,292 @@
 /* General stylings and helper classes - start */
 html {
-	font-size: 16px;
-	font-weight: 400;
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	/* Setup grid to allow side bars */
-	overflow-x: hidden;
+  /* Setup grid to allow side bars */
+  overflow-x: hidden;
+  background-color: white;
+  background-image: url("../assets/img/paper.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 700px;
 }
 
 h1 {
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
 }
 
 h2 {
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
-	font-size: 1.7rem;
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  font-size: 1.7rem;
 }
 
 h3 {
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
 }
 
 p {
-	font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* Standardise images to aid formatting */
 .img-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	max-width: 100%;
-	max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 100%;
 }
 .img-container img {
-	display: block;
-	max-width: 100%;
-	max-height: 100%;
-	margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
 
-.text-box,
-.about-section > div {
-	border: 0.5rem double #006942;
-	padding: 1rem;
-	margin: 2rem 0;
+.text-box, .about-section > div {
+  border: 0.5rem double #006942;
+  padding: 1rem;
+  margin: 2rem 0;
 }
-.text-box h3,
-.about-section > div h3 {
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
-	margin-top: 0;
+.text-box h3, .about-section > div h3 {
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  margin-top: 0;
 }
-.text-box p,
-.about-section > div p {
-	font-family: "Times New Roman", Times, serif;
+.text-box p, .about-section > div p {
+  font-family: "Times New Roman", Times, serif;
 }
 
 /* General stylings and helper classes - end */
 /* Header stuff - start */
 header {
-	font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
-	z-index: 10;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-	left: 0;
-	width: 30%;
-	border-bottom: 0.44rem solid #006942;
-	border-right: 0.44rem solid #006942;
-	box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
-	background-color: transparent;
-	/* Main logo */
-	/* Outer nav element */
-	/* Inner ul element */
+  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+  border-bottom: 0.44rem solid #006942;
+  border-right: 0.44rem solid #006942;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  /* Main logo */
+  /* Outer nav element */
+  /* Inner ul element */
+}
+@media only screen and (min-width: 992px) {
+  header {
+    flex-direction: row;
+  }
 }
 header .header__item {
-	padding: 0 1rem;
+  padding: 0 1rem;
 }
 header .main-logo img {
-	padding: 0.5rem 0;
-	border-radius: 50%;
+  padding: 0.5rem 0;
+  border-radius: 50%;
 }
 header nav {
-	grid-column: 3;
-	margin-right: 2rem;
+  grid-column: 3;
+  margin-right: 2rem;
 }
 header .nav {
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100%;
 }
 header .navigation-list {
-	grid-column: 1;
-	width: 100%;
-	padding-inline-start: 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	gap: 0rem 2rem;
+  grid-column: 1;
+  width: 100%;
+  padding-inline-start: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0rem 2rem;
 }
 header .navigation-list li {
-	display: inline-block;
+  display: inline-block;
 }
 header .navigation-list li a {
-	font-variant: small-caps;
-	font-weight: 800;
-	font-size: 2rem;
-	text-decoration: none;
-	color: #006942;
+  font-variant: small-caps;
+  font-weight: 800;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #006942;
 }
 header .navigation-list li a:hover {
-	color: #10593e;
+  color: #10593e;
 }
 header .navigation-list li a:visited {
-	color: #006942;
+  color: #006942;
 }
 
 /* Header stuff - end */
 main {
-	font-family: "Times New Roman", Times, serif;
-	width: 100%;
-	background-image: url("../assets/img/paper.png");
-	background-repeat: repeat;
-	background-attachment: scroll;
-	background-size: 700px;
-	color: #0d0d0d;
-	padding: 2rem;
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  color: #0d0d0d;
+  padding: 2rem;
 }
 main > section {
-	padding-bottom: 2rem;
-	border-bottom: 0.1rem solid #006942;
-	margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 0.1rem solid #006942;
+  margin-bottom: 2rem;
 }
 
 .home-section > div {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	gap: 1rem;
-	margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 @media only screen and (min-width: 992px) {
-	.home-section > div {
-		flex-direction: row;
-	}
+  .home-section > div {
+    flex-direction: row;
+  }
 }
 .home-section .home-section__title {
-	font-size: 3rem;
-	font-weight: bold;
-	text-align: center;
-	margin-block-start: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-block-start: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
 }
 .home-section .home-section__text {
-	font-size: 1.4rem;
-	flex: 1 1;
+  font-size: 1.4rem;
+  flex: 1 1;
 }
 .home-section .home-section__text > p {
-	margin-block-start: 0;
+  margin-block-start: 0;
 }
 .home-section .home-section__photo {
-	flex-basis: 20rem;
-	flex: 1 1;
-	min-width: 250px;
-	overflow: hidden;
+  flex-basis: 20rem;
+  flex: 1 1;
+  min-width: 250px;
+  overflow: hidden;
 }
 .home-section .home-section__photo > img {
-	border-radius: 3rem;
+  border-radius: 3rem;
 }
 
 .gallery-section {
-	position: relative;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-evenly;
-	align-content: flex-start;
-	gap: 1rem;
-	width: 100%;
-	padding-bottom: 0;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding-bottom: 0;
 }
 .gallery-section--collapsed {
-	overflow-y: hidden;
-	max-height: 15rem;
+  overflow-y: hidden;
+  max-height: 15rem;
 }
 .gallery-section .gallery__button {
-	border: 2px dashed rgb(247, 7, 127);
-	width: 100%;
-	height: 5rem;
-	background-image: linear-gradient(
-		rgba(255, 255, 255, 0),
-		rgba(255, 255, 255, 0.8),
-		rgb(255, 255, 255)
-	);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  border: 2px dashed rgb(247, 7, 127);
+  width: 100%;
+  height: 5rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgb(255, 255, 255));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gallery-section .gallery__button p {
-	display: block;
-	margin: auto;
-	transition: transform 0.5s ease-out;
+  display: block;
+  margin: auto;
+  transition: transform 0.5s ease-out;
 }
 .gallery-section .gallery__button:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 .gallery-section .gallery__button--collapsed {
-	position: absolute;
-	bottom: 0;
+  position: absolute;
+  bottom: 0;
 }
 .gallery-section .gallery__button--collapsed p {
-	transform: rotate(180deg);
-	transition: transform 0.5s ease-out;
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-out;
 }
 
 .pretend-image {
-	display: block;
-	width: 250px;
-	height: 250px;
-	border: 3px solid rgb(247, 7, 127);
+  display: block;
+  width: 250px;
+  height: 250px;
+  border: 3px solid rgb(247, 7, 127);
 }
 
 .about-section {
-	display: flex;
-	flex-flow: column nowrap;
-	align-items: center;
-	justify-content: space-between;
-	gap: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 .about-section > div {
-	margin: 0;
-	max-width: 90%;
+  margin: 0;
+  max-width: 90%;
 }
 .about-section > div:nth-child(odd) {
-	align-self: flex-start;
-	text-align: left;
+  align-self: flex-start;
+  text-align: left;
 }
 .about-section > div:nth-child(even) {
-	align-self: flex-end;
-	text-align: right;
+  align-self: flex-end;
+  text-align: right;
 }
 
 .contact-section .contact-section__title {
-	text-align: center;
+  text-align: center;
 }
 
 @media only screen and (max-width: 450px) {
-	html {
-		font-size: 12px;
-	}
+  html {
+    font-size: 12px;
+  }
 }
 @media only screen and (min-width: 451px) {
-	html {
-		font-size: 14px;
-	}
+  html {
+    font-size: 14px;
+  }
 }
 @media only screen and (min-width: 768px) {
-	html {
-		font-size: 14px;
-	}
+  html {
+    font-size: 14px;
+  }
 }
 @media only screen and (min-width: 992px) {
-	html {
-		font-size: 16px;
-	}
-	.side-bars {
-		display: initial;
-	}
-	.about-section #about-section__media-2 > * {
-		width: 100%;
-	}
+  html {
+    font-size: 16px;
+  }
+  .side-bars {
+    display: initial;
+  }
+  .about-section #about-section__media-2 > * {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 1200px) {
-	html {
-		font-size: 18px;
-	}
+  html {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

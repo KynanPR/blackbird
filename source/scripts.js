@@ -31,13 +31,13 @@ function loadGallery() {
 
 	galleryButton.addEventListener("click", toggleState);
 
-	// let currentState = "expanded"; // Defaults to expanded in case JS doesn't load
-
-	toggleState(); // As soon as the js loads though it collapses down
+	// Defaults to expanded in case JS doesn't load, but as soon as JS loads, colapse it down
+	// Manually add rather than using toggleState() to avoid usual scrolling behaviour
+	galleryButton.classList.add("gallery__button--collapsed");
+	gallerySection.classList.add("gallery-section--collapsed");
 
 	function toggleState() {
 		// const startState = currentState;
-
 		if (gallerySection.classList.toggle("gallery-section--collapsed")) {
 			gallerySection.scrollIntoView({ behavior: "smooth", block: "nearest" });
 		}

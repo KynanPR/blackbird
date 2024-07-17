@@ -57,6 +57,16 @@ $margin__thin: calc($margin__standard / 2);
 	grid-template-columns: $columns;
 	grid-template-rows: 100%; // Stops child elements from breaking bounds
 }
+@mixin flow-container {
+	display: flex;
+	flex-direction: column;
+	@media only screen and (min-width: 992px) {
+		flex-direction: row;
+	}
+	flex-wrap: nowrap;
+	gap: $margin__thin;
+	margin-bottom: $margin__standard;
+}
 // Setup and definitions - end
 
 /* General stylings and helper classes - start */
@@ -80,6 +90,11 @@ body {
 	// grid: 15vh auto / 100vw;
 	// grid-template-areas: "header" "main";
 	overflow-x: hidden;
+	background-color: white;
+	background-image: url("../assets/img/paper.png");
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-size: 700px;
 }
 
 h1 {
@@ -132,11 +147,15 @@ p {
 header {
 	font-family: $special-font;
 	z-index: 10;
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-	left: 0;
-	width: 30%;
+	// position: -webkit-sticky;
+	// position:sticky;
+	// top: 0;
+	// left: 0;
+	@include flow-container();
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	height: 20vh;
 	border-bottom: 0.44rem solid $colour-highlight;
 	border-right: 0.44rem solid $colour-highlight;
 	// border-radius: 0 0 1rem 1rem;
@@ -158,6 +177,9 @@ header {
 			padding: calc($padding__thin/2) 0;
 			border-radius: 50%;
 		}
+	}
+
+	.text-logo {
 	}
 
 	nav {
@@ -204,25 +226,9 @@ header {
 }
 /* Header stuff - end */
 
-@mixin flow-container {
-	display: flex;
-	flex-direction: column;
-	@media only screen and (min-width: 992px) {
-		flex-direction: row;
-	}
-	flex-wrap: nowrap;
-	gap: $margin__thin;
-	margin-bottom: $margin__standard;
-}
-
 main {
 	font-family: $general-font;
 	width: 100%;
-	background-color: white;
-	background-image: url("../assets/img/paper.png");
-	background-repeat: repeat;
-	background-attachment: scroll;
-	background-size: 700px;
 	// background-color: $colour-primary;
 	color: $colour-secondary;
 	// grid-area: main;
@@ -245,6 +251,10 @@ main {
 		font-weight: bold;
 		text-align: center;
 		margin-block-start: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 70%;
 	}
 
 	.home-section__text {
