@@ -218,7 +218,11 @@ header {
 main {
 	font-family: $general-font;
 	width: 100%;
+	background-color: white;
 	background-image: url("../assets/img/paper.png");
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-size: 700px;
 	// background-color: $colour-primary;
 	color: $colour-secondary;
 	// grid-area: main;
