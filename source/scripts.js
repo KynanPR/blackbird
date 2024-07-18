@@ -27,6 +27,7 @@ function loadHeader() {
 
 function loadGallery() {
 	const gallerySection = document.querySelector(".gallery-section");
+	const galleryCollapsible = gallerySection.querySelector(".gallery__collapsible");
 	const galleryButton = gallerySection.querySelector(".gallery__button");
 
 	galleryButton.addEventListener("click", toggleState);
@@ -34,12 +35,12 @@ function loadGallery() {
 	// Defaults to expanded in case JS doesn't load, but as soon as JS loads, colapse it down
 	// Manually add rather than using toggleState() to avoid usual scrolling behaviour
 	galleryButton.classList.add("gallery__button--collapsed");
-	gallerySection.classList.add("gallery-section--collapsed");
+	galleryCollapsible.classList.add("gallery__collapsible--collapsed");
 
 	function toggleState() {
 		// const startState = currentState;
-		if (gallerySection.classList.toggle("gallery-section--collapsed")) {
-			gallerySection.scrollIntoView({ behavior: "smooth", block: "nearest" });
+		if (galleryCollapsible.classList.toggle("gallery__collapsible--collapsed")) {
+			galleryCollapsible.scrollIntoView({ behavior: "smooth", block: "nearest" });
 		}
 		galleryButton.classList.toggle("gallery__button--collapsed");
 		console.log("toggled state");

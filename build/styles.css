@@ -188,6 +188,12 @@ main > section {
 
 .gallery-section {
   position: relative;
+  padding-bottom: 0;
+}
+.gallery-section .gallery__collapsible {
+  width: 100%;
+}
+.gallery-section .gallery__collapsible .gallery__photos {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -196,23 +202,77 @@ main > section {
   width: 100%;
   padding-bottom: 0;
 }
-.gallery-section--collapsed {
+.gallery-section .gallery__collapsible--collapsed {
+  mask-image: linear-gradient(rgb(0, 0, 0) 80, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 95%);
   overflow-y: hidden;
   max-height: 15rem;
 }
 .gallery-section .gallery__button {
-  border: 2px dashed rgb(247, 7, 127);
   width: 100%;
   height: 5rem;
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8), rgb(255, 255, 255));
+  padding: 1rem;
+  padding-bottom: 0;
+  background: radial-gradient(circle, rgba(218, 203, 183, 0.5), rgba(218, 203, 183, 0));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
-.gallery-section .gallery__button p {
+.gallery-section .gallery__button img {
+  height: 50%;
   display: block;
-  margin: auto;
-  transition: transform 0.5s ease-out;
+  position: relative;
+}
+.gallery-section .gallery__button #left-twig {
+  transform-origin: bottom left;
+  animation-name: twig-rotate-left-up;
+  animation-duration: 800ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-delay: 0ms;
+  left: 3px;
+}
+@keyframes twig-rotate-left-up {
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    transform: rotate(80deg);
+  }
+  25% {
+    transform: rotate(75deg);
+  }
+  30% {
+    transform: rotate(80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.gallery-section .gallery__button #right-twig {
+  transform-origin: bottom right;
+  animation-name: twig-rotate-right-up;
+  animation-duration: 800ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-delay: 53.3333333333ms;
+}
+@keyframes twig-rotate-right-up {
+  0% {
+    transform: rotate(-90deg);
+  }
+  10% {
+    transform: rotate(-80deg);
+  }
+  25% {
+    transform: rotate(-75deg);
+  }
+  30% {
+    transform: rotate(-80deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .gallery-section .gallery__button:hover {
   cursor: pointer;
@@ -220,17 +280,63 @@ main > section {
 .gallery-section .gallery__button--collapsed {
   position: absolute;
   bottom: 0;
+  background: none;
 }
-.gallery-section .gallery__button--collapsed p {
-  transform: rotate(180deg);
-  transition: transform 0.5s ease-out;
+.gallery-section .gallery__button--collapsed #left-twig {
+  transform-origin: bottom left;
+  animation-name: twig-rotate-left-down;
+  animation-duration: 800ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-delay: 53.3333333333ms;
+}
+@keyframes twig-rotate-left-down {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.gallery-section .gallery__button--collapsed #right-twig {
+  transform-origin: bottom right;
+  animation-name: twig-rotate-right-down;
+  animation-duration: 800ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-delay: 0ms;
+}
+@keyframes twig-rotate-right-down {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
 }
 
 .pretend-image {
   display: block;
   width: 250px;
   height: 250px;
-  border: 3px solid rgb(247, 7, 127);
 }
 
 .about-section {
