@@ -481,6 +481,21 @@ main {
 			text-align: right;
 		}
 	}
+	#text-img {
+		@include flow-container();
+		// flex-wrap: wrap;
+		#photo-bacp {
+			@include flow-container();
+			flex-direction: column;
+			gap: 0;
+			#gudrun {
+				height: 200px;
+			}
+		}
+		img {
+			height: 200px;
+		}
+	}
 	.subtitle {
 		font-size: 110%;
 	}
