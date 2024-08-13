@@ -88,6 +88,7 @@
 				</div>
 			</div>
 
+			<!-- Improved design idea: Have the collapse icon be attached to the bottom of the screen whilst you scroll down the gallery, so you don't have to go all the way to the bottom to close it. This also means that the button can be in a bordered container of some kind which means it will look better on the bottom too -->
 			<div class="gallery__button">
 				<img src="assets/img/Twig.svg" alt="⬆️" id="left-twig" />
 				<img src="assets/img/Twig2.svg" alt="⬆️" id="right-twig" />
@@ -244,6 +245,38 @@
 		</section>
 		<section class="contact-section" id="contact">
 			<h2 class="contact-section__title">Get In Touch</h2>
+			<div class="form-container">
+				<form id="myForm" method="post">
+					<div class="form-row">
+						<label for="name">Name:</label>
+						<input name="name" id="name" type="text" />
+					</div>
+					<div class="form-row">
+						<label for="email">Email:</label>
+						<input name="email" id="email" type="text" />
+					</div>
+					<div class="form-row">
+						<label for="phone">Phone No:</label>
+						<input name="phone" id="phone" type="text" />
+					</div>
+					<div class="form-row">
+						<label>Gender:</label>
+						<input name="gender" type="radio" value="yes" id="yes"><label for="yes">Yes</label>
+						<input name="gender" type="radio" value="no" id="no"><label for="no">No</label>
+					</div>
+					<div class="form-row">
+						<label for="message">Message:</label>
+						<input name="message" id="message" type="text" />
+					</div>
+					<button type="button" id="submitFormData" onclick="SubmitFormData();">Submit</button>
+				</form>
+				<br />
+				Your data will display below..... <br />
+				==============================<br />
+				<div id="results">
+					<!-- All data will display here  -->
+				</div>
+			</div>
 			<p>Contact Form Coming Soon...</p>
 			<p>In the meantime please either email us at <a href="" type="email">email also coming soon</a></p>
 		</section>

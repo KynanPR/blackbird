@@ -46,3 +46,19 @@ function loadGallery() {
 		console.log("toggled state");
 	}
 }
+
+function SubmitFormData() {
+	var name = $("#name").val();
+	var email = $("#email").val();
+	var phone = $("#phone").val();
+	var gender = $("input[type=radio]:checked").val();
+	var message = $("#message").val();
+	$.post(
+		"formsubmit.php",
+		{ name: name, email: email, phone: phone, gender: gender, message: message },
+		function (data) {
+			$("#results").html(data);
+			$("#myForm")[0].reset();
+		}
+	);
+}
