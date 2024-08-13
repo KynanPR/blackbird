@@ -54,7 +54,7 @@ function SubmitFormData() {
 	var gender = $("input[type=radio]:checked").val();
 	var message = $("#message").val();
 	$.post(
-		"formsubmit.php",
+		"./source/formsubmit.php",
 		{ name: name, email: email, phone: phone, gender: gender, message: message },
 		function (data) {
 			$("#results").html(data);
