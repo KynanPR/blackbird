@@ -358,6 +358,9 @@ main > section {
   align-self: flex-end;
   text-align: right;
 }
+.about-section .subtitle {
+  font-size: 110%;
+}
 
 .contact-section .contact-section__title {
   text-align: center;
