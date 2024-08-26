@@ -52,13 +52,13 @@ p {
 }
 
 .text-box, .about-section > div {
-  border: 0.5rem double #006942;
   padding: 1rem;
   margin: 2rem 0;
 }
 .text-box h3, .about-section > div h3 {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   margin-top: 0;
+  text-align: center;
 }
 .text-box p, .about-section > div p {
   font-family: "Times New Roman", Times, serif;
@@ -75,12 +75,9 @@ header {
   gap: 1rem;
   margin-bottom: 2rem;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   height: 20vh;
-  border-bottom: 0.44rem solid #006942;
-  border-right: 0.44rem solid #006942;
-  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
   background-color: transparent;
   /* Main logo */
   /* Outer nav element */
@@ -92,7 +89,7 @@ header {
   }
 }
 header .header__item {
-  padding: 0 1rem;
+  padding: 1rem;
 }
 header .main-logo img {
   padding: 0.5rem 0;
@@ -139,7 +136,7 @@ main {
   font-family: "Times New Roman", Times, serif;
   width: 100%;
   color: #0d0d0d;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 main > section {
   padding-bottom: 2rem;
@@ -349,14 +346,17 @@ main > section {
 .about-section > div {
   margin: 0;
   max-width: 90%;
+  align-self: center;
 }
-.about-section > div:nth-child(odd) {
-  align-self: flex-start;
-  text-align: left;
-}
-.about-section > div:nth-child(even) {
-  align-self: flex-end;
-  text-align: right;
+@media only screen and (min-width: 992px) {
+  .about-section > div:nth-child(odd) {
+    align-self: flex-start;
+    text-align: left;
+  }
+  .about-section > div:nth-child(even) {
+    align-self: flex-end;
+    text-align: right;
+  }
 }
 .about-section #text-img {
   display: flex;
@@ -370,26 +370,6 @@ main > section {
     flex-direction: row;
   }
 }
-.about-section #text-img #photo-bacp {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-direction: column;
-  gap: 0;
-}
-@media only screen and (min-width: 992px) {
-  .about-section #text-img #photo-bacp {
-    flex-direction: row;
-  }
-}
-.about-section #text-img #photo-bacp #gudrun {
-  height: 200px;
-}
-.about-section #text-img img {
-  height: 200px;
-}
 .about-section .subtitle {
   font-size: 110%;
 }
@@ -398,24 +378,43 @@ main > section {
   text-align: center;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+  footer {
+    flex-direction: row;
+  }
+}
+footer img {
+  max-width: 80vw;
+  max-height: 10vh;
+}
+
 @media only screen and (max-width: 450px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 451px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media only screen and (min-width: 992px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
   .side-bars {
     display: initial;
@@ -426,7 +425,7 @@ main > section {
 }
 @media only screen and (min-width: 1200px) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
