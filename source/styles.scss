@@ -131,11 +131,13 @@ p {
 	h3 {
 		font-family: $special-font;
 		margin-top: 0;
+	text-align: center;
 	}
 	p {
 		font-family: $general-font;
+	// text-align: left;
 	}
-	border: 0.5rem double $colour-highlight;
+  // border: 0.5rem double $colour-highlight;
 	padding: $padding__thin;
 	margin: $margin__standard 0;
 	// margin-block-start: 0;
@@ -469,6 +471,7 @@ main {
 		margin: 0;
 		max-width: 90%; // For larger screens
 
+    @media only screen and (min-width: $breakpoint__medium) {
 		&:nth-child(odd) {
 			align-self: flex-start;
 
@@ -480,6 +483,7 @@ main {
 
 			text-align: right;
 		}
+
 	}
 	#text-img {
 		@include flow-container();
