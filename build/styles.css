@@ -364,11 +364,32 @@ main > section {
   flex-wrap: nowrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  align-items: center;
 }
 @media only screen and (min-width: 992px) {
   .about-section #text-img {
     flex-direction: row;
   }
+}
+.about-section #text-img #photo-bacp {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  gap: 0;
+}
+@media only screen and (min-width: 992px) {
+  .about-section #text-img #photo-bacp {
+    flex-direction: row;
+  }
+}
+.about-section #text-img #photo-bacp #gudrun {
+  height: 200px;
+}
+.about-section #text-img img {
+  height: 200px;
 }
 .about-section .subtitle {
   font-size: 110%;
