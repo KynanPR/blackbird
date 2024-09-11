@@ -19,11 +19,19 @@ body {
   text-align: justify;
 }
 
-.heading-base, h4, h3, h2, h1 {
+.heading-base,
+h4,
+h3,
+h2,
+h1 {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   text-align: center;
 }
-.heading-base::before, h4::before, h3::before, h2::before, h1::before {
+.heading-base::before,
+h4::before,
+h3::before,
+h2::before,
+h1::before {
   content: "";
   background: url("../assets/logos/Leaf_Left.svg");
   background-size: contain;
@@ -32,7 +40,11 @@ body {
   margin-right: 0.2em; /* spacing*/
   padding-left: 1.5em; /* sizing */
 }
-.heading-base::after, h4::after, h3::after, h2::after, h1::after {
+.heading-base::after,
+h4::after,
+h3::after,
+h2::after,
+h1::after {
   content: "";
   background: url("../assets/logos/Leaf_Right.svg");
   background-size: contain;
@@ -59,7 +71,8 @@ h4 {
   text-align: start;
   margin-bottom: 0;
 }
-h4::after, h4::before {
+h4::after,
+h4::before {
   content: none;
 }
 
@@ -108,7 +121,9 @@ a {
 }
 
 /* Header stuff - start */
-.header, nav, header {
+.header,
+nav,
+header {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   z-index: 10;
   width: var(--center-panel-width);
@@ -240,7 +255,11 @@ main > section {
   height: 5rem;
   padding: 1rem;
   padding-bottom: 0;
-  background: radial-gradient(circle, rgba(240, 241, 222, 0.5), rgba(240, 241, 222, 0));
+  background: radial-gradient(
+    circle,
+    rgba(240, 241, 222, 0.5),
+    rgba(240, 241, 222, 0)
+  );
   display: flex;
   align-items: flex-start;
   justify-content: center;
