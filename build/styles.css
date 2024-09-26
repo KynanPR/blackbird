@@ -69,15 +69,20 @@ p {
 header {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   z-index: 10;
+  position: sticky;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 1rem;
   margin-bottom: 2rem;
-  flex-direction: row;
-  justify-content: flex-start;
+  gap: 0;
+  justify-content: center;
   width: 100%;
   height: 20vh;
+  background-image: url("../assets/img/paper.png");
+  background-repeat: repeat;
   background-color: transparent;
   /* Main logo */
   /* Outer nav element */
@@ -89,46 +94,28 @@ header {
   }
 }
 header .header__item {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 header .main-logo img {
   padding: 0.5rem 0;
   border-radius: 50%;
 }
-header nav {
-  grid-column: 3;
-  margin-right: 2rem;
-}
-header .nav {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 100%;
-}
-header .navigation-list {
-  grid-column: 1;
-  width: 100%;
-  padding-inline-start: 0;
+header nav .navigation-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
-  gap: 0rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style-image: url("../assets/logos/Blatt 1.svg");
 }
-header .navigation-list li {
-  display: inline-block;
-}
-header .navigation-list li a {
-  font-variant: small-caps;
-  font-weight: 800;
-  font-size: 2rem;
-  text-decoration: none;
-  color: #006942;
-}
-header .navigation-list li a:hover {
-  color: #10593e;
-}
-header .navigation-list li a:visited {
-  color: #006942;
+@media only screen and (min-width: 992px) {
+  header nav .navigation-list {
+    flex-direction: row;
+  }
 }
 
 /* Header stuff - end */
@@ -359,37 +346,13 @@ main > section {
   }
 }
 .about-section #text-img {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
   align-items: center;
-}
-@media only screen and (min-width: 992px) {
-  .about-section #text-img {
-    flex-direction: row;
-  }
-}
-.about-section #text-img #photo-bacp {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-direction: column;
-  gap: 0;
-}
-@media only screen and (min-width: 992px) {
-  .about-section #text-img #photo-bacp {
-    flex-direction: row;
-  }
-}
-.about-section #text-img #photo-bacp #gudrun {
-  height: 200px;
 }
 .about-section #text-img img {
   height: 200px;
+  float: inline-end;
+  border-radius: 25%;
+  shape-outside: border-box;
 }
 .about-section .subtitle {
   font-size: 110%;

@@ -149,15 +149,20 @@ p {
 header {
 	font-family: $special-font;
 	z-index: 10;
+	position: sticky;
+	left: 0;
+	top: 0;
 	// position: -webkit-sticky;
 	// position:sticky;
 	// top: 0;
 	// left: 0;
 	@include flow-container();
-	flex-direction: row;
-	justify-content: flex-start;
+	gap: 0;
+	justify-content: center;
 	width: 100%;
 	height: 20vh;
+	background-image: url("../assets/img/paper.png");
+	background-repeat: repeat;
 	//   border-bottom: 0.44rem solid $colour-highlight;
 	//   border-right: 0.44rem solid $colour-highlight;
 	// border-radius: 0 0 1rem 1rem;
@@ -168,7 +173,7 @@ header {
 	// @include single-row-grid(3, 2fr 1fr 2fr);
 
 	.header__item {
-		padding: $padding__thin;
+		padding: calc($padding__thin/2);
 	}
 
 	/* Main logo */
@@ -185,46 +190,49 @@ header {
 	}
 
 	nav {
-		grid-column: 3;
-		margin-right: $margin__standard;
+		.navigation-list {
+			@include flow-container();
+			flex-direction: row;
+			justify-content: space-evenly;
+			margin: 0;
+			padding: 0;
+			list-style-image: url("../assets/logos/Blatt 1.svg");
+		}
 	}
 
 	/* Outer nav element */
-	.nav {
-		@include single-row-grid(1);
-	}
 
 	/* Inner ul element */
-	.navigation-list {
-		grid-column: 1;
-		width: 100%;
-		padding-inline-start: 0;
+	// .navigation-list {
+	// 	grid-column: 1;
+	// 	width: 100%;
+	// 	padding-inline-start: 0;
 
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-evenly;
-		align-items: center;
-		gap: 0rem $margin__standard;
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// 	justify-content: space-evenly;
+	// 	align-items: center;
+	// 	gap: 0rem $margin__standard;
 
-		li {
-			display: inline-block;
+	// 	li {
+	// 		display: inline-block;
 
-			a {
-				font-variant: small-caps;
-				font-weight: 800;
-				font-size: 2rem;
-				text-decoration: none;
-				color: $colour-highlight;
+	// 		a {
+	// 			font-variant: small-caps;
+	// 			font-weight: 800;
+	// 			font-size: 2rem;
+	// 			text-decoration: none;
+	// 			color: $colour-highlight;
 
-				&:hover {
-					color: color.adjust($colour-highlight, $saturation: -30%);
-				}
-				&:visited {
-					color: $colour-highlight;
-				}
-			}
-		}
-	}
+	// 			&:hover {
+	// 				color: color.adjust($colour-highlight, $saturation: -30%);
+	// 			}
+	// 			&:visited {
+	// 				color: $colour-highlight;
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 /* Header stuff - end */
 
@@ -488,19 +496,14 @@ main {
 		align-self: center;
 	}
 	#text-img {
-		@include flow-container();
+		// @include flow-container();
 		align-items: center;
 		// flex-wrap: wrap;
-		#photo-bacp {
-			@include flow-container();
-			flex-direction: column;
-			gap: 0;
-			#gudrun {
-				height: 200px;
-			}
-		}
 		img {
 			height: 200px;
+			float: inline-end;
+			border-radius: 25%;
+			shape-outside: border-box;
 		}
 	}
 	.subtitle {
