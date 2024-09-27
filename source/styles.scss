@@ -87,6 +87,7 @@ html {
 body {
   overflow-x: hidden;
   background-color: $colour-highlight;
+  text-align: justify;
   // background-image: url("../assets/img/paper.png");
   // background-repeat: repeat;
   // background-attachment: scroll;
@@ -153,8 +154,8 @@ p {
     // text-align: left;
   }
   // border: 0.5rem double $colour-highlight;
-  padding: $padding__thin;
-  margin: $margin__standard 0;
+  // padding: $padding__thin;
+  // margin: $margin__standard 0;
   // margin-block-start: 0;
   // margin-block-end: 0;
 }
@@ -225,19 +226,21 @@ main {
   width: 90%;
   background-color: $colour-primary;
   color: $colour-secondary;
+  padding-top: $padding__standard;
 
   margin: auto;
 
   > section {
-    padding-bottom: $padding__standard;
-    border-bottom: 0.1rem solid $colour-highlight;
-    margin-bottom: $margin__standard;
+    padding: $padding__thin;
+    // border-bottom: 0.1rem solid $colour-highlight;
+    // margin-bottom: $margin__standard;
   }
 }
 
 .home-section {
   > div {
     @include flow-container();
+    margin-bottom: unset;
   }
 
   .home-section__title {
@@ -460,15 +463,14 @@ main {
 }
 
 .about-section {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: $margin__standard;
+  // display: flex;
+  // flex-flow: column nowrap;
+  // align-items: center;
+  // justify-content: space-between;
+  // gap: $margin__standard;
   > div {
-    @extend .text-box;
     margin: 0;
-    max-width: 90%; // For larger screens
+    // max-width: 90%; // For larger screens
 
     // @media only screen and (min-width: $breakpoint__medium) {
     //   &:nth-child(odd) {
@@ -487,23 +489,23 @@ main {
     align-self: center;
   }
   #text-img {
-    @include flow-container();
-    align-items: center;
-    // flex-wrap: wrap;
-    #photo-bacp {
-      @include flow-container();
-      flex-direction: column;
-      gap: 0;
-      #gudrun {
-        height: 200px;
-      }
+    overflow: auto;
+    // @include flow-container();
+    // align-items: center;
+    > .photo {
+      max-height: 80vh;
+      width: 60%;
+      float: right;
+      // clear: left;
+      border-radius: 50%;
+      overflow: hidden;
+      shape-outside: margin-box;
+      margin-left: $margin__thin;
+      margin-bottom: $margin__thin;
     }
-    img {
-      height: 200px;
+    p {
+      padding-right: $padding__thin;
     }
-  }
-  .subtitle {
-    font-size: 110%;
   }
 }
 
