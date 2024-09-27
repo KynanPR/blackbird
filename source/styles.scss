@@ -146,17 +146,13 @@ p {
   font-family: $special-font;
   z-index: 10;
   width: 90%;
-  margin: auto;
-  background-color: $colour-highlight;
+  margin-left: auto;
+  margin-right: auto;
 }
 header {
   @extend .header;
-  //   @include flow-container();
-  //   gap: 0;
-  //   justify-content: flex-start;
-
-  padding-top: $padding__thin;
-  //   height: 20vh;
+  background-color: $colour-primary;
+  padding: $padding__thin;
 
   .header__item {
   }
@@ -168,8 +164,9 @@ header {
 }
 nav {
   @extend .header;
+  background-color: $colour-highlight;
   position: sticky;
-  top: 0;
+  top: -1px;
   $link-colour: $colour-primary;
   color: $link-colour;
 

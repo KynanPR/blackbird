@@ -65,12 +65,13 @@ p {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   z-index: 10;
   width: 90%;
-  margin: auto;
-  background-color: #006942;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
-  padding-top: 1rem;
+  background-color: #dacbb7;
+  padding: 1rem;
 }
 header .main-logo {
   width: 100%;
@@ -78,8 +79,9 @@ header .main-logo {
 }
 
 nav {
+  background-color: #006942;
   position: sticky;
-  top: 0;
+  top: -1px;
   color: #dacbb7;
 }
 nav .navigation-list {
