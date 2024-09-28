@@ -9,9 +9,9 @@ $breakpoint__medium: 992px;
 $breakpoint__large: 1200px;
 $breakpoint__x-large: 1700px;
 
-$colour-primary: #dacbb7;
+$colour-primary: #f0f1de;
 $colour-secondary: #0d0d0d;
-$colour-highlight: #006942;
+$colour-highlight: #003320;
 $colour-grey: #505050;
 $colour-debug: rgb(247, 7, 127);
 
@@ -94,16 +94,7 @@ body {
   // background-size: 700px;
 }
 
-h1 {
-  font-family: $special-font;
-}
-
-h2 {
-  font-family: $special-font;
-  font-size: 1.7rem;
-}
-
-h3 {
+.heading-base {
   font-family: $special-font;
   text-align: center;
   &::before {
@@ -126,8 +117,34 @@ h3 {
   }
 }
 
+h1 {
+  @extend .heading-base;
+  font-size: 1.7em;
+}
+
+h2 {
+  @extend .heading-base;
+  font-size: 1.3em;
+}
+
+h3 {
+  @extend .heading-base;
+  font-size: 1.3em;
+}
+h4 {
+  @extend .heading-base;
+  font-size: 1.1em;
+  text-align: start;
+  margin-bottom: 0;
+  &::after,
+  &::before {
+    content: none;
+  }
+}
+
 p {
   font-family: $general-font;
+  margin-block: calc($padding__thin/2);
 }
 
 /* Standardise images to aid formatting */
@@ -145,12 +162,9 @@ p {
 
 .text-box {
   h3 {
-    font-family: $special-font;
     margin-top: 0;
-    text-align: center;
   }
   p {
-    font-family: $general-font;
     // text-align: left;
   }
   // border: 0.5rem double $colour-highlight;
@@ -173,13 +187,16 @@ header {
   @extend .header;
   background-color: $colour-primary;
   padding: $padding__thin;
+  padding-top: $padding__standard;
 
   .header__item {
   }
 
   .main-logo {
     width: 100%;
+    padding-right: $padding__thin;
     max-height: unset;
+    background-color: $colour-primary;
   }
 }
 nav {
@@ -255,7 +272,7 @@ main {
   }
 
   .home-section__text {
-    font-size: 1.4rem;
+    // font-size: 1.4rem;
     flex: 1 1;
 
     > p {
@@ -505,8 +522,12 @@ main {
     }
     p {
       padding-right: $padding__thin;
+      margin-block-start: 0;
     }
   }
+}
+
+.faq-section {
 }
 
 .contact-section {

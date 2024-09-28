@@ -11,24 +11,15 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #006942;
+  background-color: #003320;
   text-align: justify;
 }
 
-h1 {
-  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
-}
-
-h2 {
-  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
-  font-size: 1.7rem;
-}
-
-h3 {
+.heading-base, h4, h3, h2, h1 {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   text-align: center;
 }
-h3::before {
+.heading-base::before, h4::before, h3::before, h2::before, h1::before {
   content: "";
   background: url("../assets/logos/Leaf_Left.svg");
   background-size: contain;
@@ -37,7 +28,7 @@ h3::before {
   margin-right: 0.2em; /* spacing*/
   padding-left: 1.5em; /* sizing */
 }
-h3::after {
+.heading-base::after, h4::after, h3::after, h2::after, h1::after {
   content: "";
   background: url("../assets/logos/Leaf_Right.svg");
   background-size: contain;
@@ -47,8 +38,30 @@ h3::after {
   padding-right: 1.5em; /* sizing */
 }
 
+h1 {
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+  text-align: start;
+  margin-bottom: 0;
+}
+h4::after, h4::before {
+  content: none;
+}
+
 p {
   font-family: "Times New Roman", Times, serif;
+  margin-block: 0.5rem;
 }
 
 /* Standardise images to aid formatting */
@@ -67,14 +80,8 @@ p {
 }
 
 .text-box h3 {
-  font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   margin-top: 0;
-  text-align: center;
 }
-.text-box p {
-  font-family: "Times New Roman", Times, serif;
-}
-
 /* General stylings and helper classes - end */
 /* Header stuff - start */
 .header, nav, header {
@@ -86,19 +93,22 @@ p {
 }
 
 header {
-  background-color: #dacbb7;
+  background-color: #f0f1de;
   padding: 1rem;
+  padding-top: 2rem;
 }
 header .main-logo {
   width: 100%;
+  padding-right: 1rem;
   max-height: unset;
+  background-color: #f0f1de;
 }
 
 nav {
-  background-color: #006942;
+  background-color: #003320;
   position: sticky;
   top: -1px;
-  color: #dacbb7;
+  color: #f0f1de;
 }
 nav .navigation-list {
   width: 100%;
@@ -120,17 +130,17 @@ nav .navigation-list li a {
   color: inherit;
 }
 nav .navigation-list li a:hover {
-  color: #cac9c7;
+  color: #eaeae5;
 }
 nav .navigation-list li a:visited {
-  color: #dacbb7;
+  color: #f0f1de;
 }
 
 /* Header stuff - end */
 main {
   font-family: "Times New Roman", Times, serif;
   width: 90%;
-  background-color: #dacbb7;
+  background-color: #f0f1de;
   color: #0d0d0d;
   padding-top: 2rem;
   margin: auto;
@@ -163,7 +173,6 @@ main > section {
   width: 70%;
 }
 .home-section .home-section__text {
-  font-size: 1.4rem;
   flex: 1 1;
 }
 .home-section .home-section__text > p {
@@ -206,7 +215,7 @@ main > section {
   height: 5rem;
   padding: 1rem;
   padding-bottom: 0;
-  background: radial-gradient(circle, rgba(218, 203, 183, 0.5), rgba(218, 203, 183, 0));
+  background: radial-gradient(circle, rgba(240, 241, 222, 0.5), rgba(240, 241, 222, 0));
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -351,6 +360,7 @@ main > section {
 }
 .about-section #text-img p {
   padding-right: 1rem;
+  margin-block-start: 0;
 }
 
 .contact-section form {
