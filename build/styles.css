@@ -353,8 +353,58 @@ main > section {
   padding-right: 1rem;
 }
 
-.contact-section .contact-section__title {
-  text-align: center;
+.contact-section form {
+  margin: 2rem 0;
+  padding: 1rem;
+  border: #003320 double 5px;
+  display: grid;
+  grid-template: "name email" "message message" "submit .";
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+.contact-section form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.contact-section form input,
+.contact-section form textarea {
+  font-size: 1rem;
+  padding: 0;
+  display: block;
+  background-color: transparent;
+  border: unset;
+  border-bottom: #0d0d0d solid 1px;
+  width: 100%;
+}
+.contact-section form input:focus-visible,
+.contact-section form textarea:focus-visible {
+  outline: none;
+}
+.contact-section form button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #003320;
+  border-radius: 30%/50%;
+  color: #f0f1de;
+}
+.contact-section form button img {
+  display: inline-block;
+  height: 1em;
+}
+.contact-section form .form-row:has(#name) {
+  grid-area: name;
+}
+.contact-section form .form-row:has(#email) {
+  grid-area: email;
+}
+.contact-section form .form-row:has(#message) {
+  grid-area: message;
+}
+.contact-section form .form-row:has(#submit) {
+  grid-area: submit;
+}
+.contact-section form .honeypot {
+  display: none;
 }
 
 footer {

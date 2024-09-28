@@ -510,8 +510,61 @@ main {
 }
 
 .contact-section {
-  .contact-section__title {
-    text-align: center;
+  form {
+    margin: $margin__standard 0;
+    padding: $padding__thin;
+    border: $colour-highlight double 5px;
+    display: grid;
+    grid-template: "name email" "message message" "submit .";
+    gap: $margin__thin;
+    font-size: 1.1rem;
+
+    label {
+      display: block;
+      margin-bottom: calc($margin__thin/2);
+    }
+    input,
+    textarea {
+      font-size: 1rem;
+      padding: 0;
+      display: block;
+      background-color: transparent;
+      border: unset;
+      border-bottom: $colour-secondary solid 1px;
+      width: 100%;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    button {
+      width: fit-content;
+      padding: calc($padding__thin/2) $padding__thin;
+      background-color: $colour-highlight;
+      border-radius: 30%/50%;
+      color: $colour-primary;
+      img {
+        display: inline-block;
+        height: 1em;
+        // width: 1em;
+        // transform: rotate(-90deg);
+      }
+    }
+
+    .form-row:has(#name) {
+      grid-area: name;
+    }
+    .form-row:has(#email) {
+      grid-area: email;
+    }
+    .form-row:has(#message) {
+      grid-area: message;
+    }
+    .form-row:has(#submit) {
+      grid-area: submit;
+    }
+    .honeypot {
+      display: none;
+    }
   }
 }
 
