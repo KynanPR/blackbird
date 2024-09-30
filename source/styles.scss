@@ -563,11 +563,8 @@ main {
       background-color: $colour-highlight;
       border-radius: 30%/50%;
       color: $colour-primary;
-      img {
-        display: inline-block;
-        height: 1em;
-        // width: 1em;
-        // transform: rotate(-90deg);
+      svg {
+        vertical-align: top;
       }
     }
 

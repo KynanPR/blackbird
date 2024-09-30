@@ -397,9 +397,8 @@ main > section {
   border-radius: 30%/50%;
   color: #f0f1de;
 }
-.contact-section form button img {
-  display: inline-block;
-  height: 1em;
+.contact-section form button svg {
+  vertical-align: top;
 }
 .contact-section form .form-row:has(#name) {
   grid-area: name;
