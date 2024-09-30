@@ -256,7 +256,6 @@ main {
 
 .home-section {
   > div {
-    @include flow-container();
     margin-bottom: unset;
   }
 
@@ -510,18 +509,21 @@ main {
     // @include flow-container();
     // align-items: center;
     > .photo {
-      max-height: 80vh;
-      width: 60%;
       float: right;
       // clear: left;
       border-radius: 50%;
-      overflow: hidden;
-      shape-outside: margin-box;
-      margin-left: $margin__thin;
-      margin-bottom: $margin__thin;
+      shape-outside: border-box;
+      border: transparent solid $margin__thin;
+      border-bottom: 0;
+      margin-top: calc($margin__standard * 1.25);
+
+      img {
+        border-radius: 50%;
+        max-height: 40vh;
+      }
     }
     p {
-      padding-right: $padding__thin;
+      padding-right: $padding__standard;
       margin-block-start: 0;
     }
   }

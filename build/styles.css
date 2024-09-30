@@ -150,17 +150,7 @@ main > section {
 }
 
 .home-section > div {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
   margin-bottom: unset;
-}
-@media only screen and (min-width: 992px) {
-  .home-section > div {
-    flex-direction: row;
-  }
 }
 .home-section .home-section__title {
   font-size: 3rem;
@@ -349,17 +339,19 @@ main > section {
   overflow: auto;
 }
 .about-section #text-img > .photo {
-  max-height: 80vh;
-  width: 60%;
   float: right;
   border-radius: 50%;
-  overflow: hidden;
-  shape-outside: margin-box;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  shape-outside: border-box;
+  border: transparent solid 1rem;
+  border-bottom: 0;
+  margin-top: 2.5rem;
+}
+.about-section #text-img > .photo img {
+  border-radius: 50%;
+  max-height: 40vh;
 }
 .about-section #text-img p {
-  padding-right: 1rem;
+  padding-right: 2rem;
   margin-block-start: 0;
 }
 
