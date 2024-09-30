@@ -368,7 +368,7 @@ main > section {
   padding: 1rem;
   border: #003320 double 5px;
   display: grid;
-  grid-template: "name email" "message message" "submit .";
+  grid-template: "name ." "email ." "message message" "submit .";
   gap: 1rem;
   font-size: 1.1rem;
 }
@@ -391,6 +391,7 @@ main > section {
   outline: none;
 }
 .contact-section form button {
+  grid-area: submit;
   width: fit-content;
   padding: 0.5rem 1rem;
   background-color: #003320;

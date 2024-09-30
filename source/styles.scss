@@ -536,7 +536,8 @@ main {
     padding: $padding__thin;
     border: $colour-highlight double 5px;
     display: grid;
-    grid-template: "name email" "message message" "submit .";
+    // grid-template: "name email" "message message" "submit .";
+    grid-template: "name ." "email ." "message message" "submit .";
     gap: $margin__thin;
     font-size: 1.1rem;
 
@@ -558,6 +559,7 @@ main {
       }
     }
     button {
+      grid-area: submit;
       width: fit-content;
       padding: calc($padding__thin/2) $padding__thin;
       background-color: $colour-highlight;
