@@ -264,6 +264,14 @@ main {
   > div {
     margin-bottom: unset;
   }
+  padding-top: 0;
+
+  h2 {
+    margin-top: 0;
+  }
+  h3 {
+    margin-top: $margin__thin;
+  }
 
   .home-section__title {
     font-size: 3rem;
@@ -597,12 +605,33 @@ main {
 }
 
 footer {
-  @include flow-container();
-  align-items: center;
-  justify-content: center;
-  img {
-    max-width: 80vw;
-    max-height: 10vh;
+  width: var(--center-panel-width);
+  margin: $margin__thin auto;
+  padding: 0 $padding__thin;
+  height: 15vh;
+  .footer__imgs {
+    @include flow-container();
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    margin-bottom: $margin__thin;
+
+    .footer-img {
+      height: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .footer__extra {
+    p {
+      font-family: sans-serif;
+    }
+    a {
+      color: inherit;
+    }
+    text-align: center;
   }
 }
 
