@@ -1,29 +1,23 @@
-function loadHeader() {
-  // Manually perform scroll on nav link click to have it be smooth and account for the header
-  const header = document.querySelector("header");
-  const navLinks = header.querySelectorAll("nav a");
+// Using navbar links smooth scrolls
+$(document).ready(function () {
+  // Smooth scrolling function using jQuery's animate method
+  function smoothScroll(target, duration) {
+    let navbarHeight = $("nav").outerHeight(); // Get the navbar's height
+    $("html, body").animate(
+      {
+        scrollTop: $(target).offset().top - navbarHeight,
+      },
+      duration
+    );
+  }
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", handleNavigationClick);
+  // Attach click event handlers to navigation links using jQuery selectors
+  $("nav a").click(function (e) {
+    e.preventDefault();
+    let target = $(this).attr("href");
+    smoothScroll(target, 1000); // Adjust duration as needed
   });
-
-  function handleNavigationClick(event) {
-    event.preventDefault();
-    const targetSection = event.target.getAttribute("href");
-    scrollToSection(targetSection);
-  }
-
-  function scrollToSection(targetSection) {
-    const navbarHeight = header.offsetHeight;
-    const targetElement = document.querySelector(targetSection);
-    const targetPosition = targetElement.offsetTop;
-
-    window.scrollTo({
-      top: targetPosition - (navbarHeight + 50),
-      behavior: "smooth",
-    });
-  }
-}
+});
 
 function loadGallery() {
   const gallerySection = document.querySelector(".gallery-section");
