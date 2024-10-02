@@ -71,6 +71,7 @@ $margin__thin: calc($margin__standard / 2);
 
 /* General stylings and helper classes - start */
 :root {
+  --center-panel-width: 90%;
 }
 
 html {
@@ -179,7 +180,7 @@ p {
 .header {
   font-family: $special-font;
   z-index: 10;
-  width: 90%;
+  width: var(--center-panel-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -188,12 +189,15 @@ header {
   background-color: $colour-primary;
   padding: $padding__thin;
   padding-top: $padding__standard;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
 
   .header__item {
   }
 
   .main-logo {
     width: 100%;
+    margin: auto;
     padding-right: $padding__thin;
     max-height: unset;
     background-color: $colour-primary;
@@ -240,10 +244,12 @@ nav {
 
 main {
   font-family: $general-font;
-  width: 90%;
+  width: var(--center-panel-width);
   background-color: $colour-primary;
   color: $colour-secondary;
   padding-top: $padding__standard;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 
   margin: auto;
 
@@ -609,41 +615,39 @@ footer {
   html {
     font-size: 16px;
   }
-  .about-section {
-    #about-section__media-1 {
-    }
-  }
 }
+
 @media only screen and (min-width: $breakpoint__small) {
   html {
     font-size: 16px;
   }
-  .about-section {
-    #about-section__media-1 {
-    }
+  :root {
+    --center-panel-width: 85%;
+  }
+  .main-logo {
+    width: 80% !important;
   }
 }
+
 @media only screen and (min-width: $breakpoint__medium) {
   html {
     font-size: 18px;
   }
-  body {
+  :root {
+    --center-panel-width: 80%;
   }
-  .side-bars {
-    display: initial;
-  }
-  .about-section {
-    #about-section__media-1 {
-    }
-    #about-section__media-2 {
-      > * {
-        width: 100%;
-      }
-    }
+  .main-logo {
+    width: 70% !important;
   }
 }
 @media only screen and (min-width: $breakpoint__large) {
   html {
     font-size: 20px;
+  }
+  :root {
+    --center-panel-width: 75%;
+  }
+  .main-logo {
+    width: 60% !important;
   }
 }
