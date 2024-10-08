@@ -83,10 +83,25 @@ p {
   margin: auto;
 }
 
+.centered p {
+  text-align: center;
+}
+
 .text-box h3 {
   margin-top: 0;
 }
 /* General stylings and helper classes - end */
+#background {
+  background-image: url("../assets/img/paper.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 700px;
+  width: var(--center-panel-width);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+}
+
 /* Header stuff - start */
 .header, nav, header {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
@@ -97,18 +112,17 @@ p {
 }
 
 header {
-  background-color: #f0f1de;
   padding: 1rem;
   padding-top: 2rem;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
+  width: 100%;
 }
 header .main-logo {
   width: 100%;
   margin: auto;
   padding-right: 1rem;
   max-height: unset;
-  background-color: #f0f1de;
 }
 
 nav {
@@ -146,8 +160,6 @@ nav .navigation-list li a:visited {
 /* Header stuff - end */
 main {
   font-family: "Times New Roman", Times, serif;
-  width: var(--center-panel-width);
-  background-color: #f0f1de;
   color: #0d0d0d;
   padding-top: 2rem;
   border-bottom-right-radius: 2rem;
@@ -363,6 +375,7 @@ main > section {
   border: transparent solid 1rem;
   border-bottom: 0;
   margin-top: 2.5rem;
+  width: 70%;
 }
 .about-section #text-img > .photo img {
   border-radius: 50%;

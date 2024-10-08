@@ -89,6 +89,7 @@ body {
   overflow-x: hidden;
   background-color: $colour-highlight;
   text-align: justify;
+
   // background-image: url("../assets/img/paper.png");
   // background-repeat: repeat;
   // background-attachment: scroll;
@@ -161,6 +162,12 @@ p {
   }
 }
 
+.centered {
+  p {
+    text-align: center;
+  }
+}
+
 .text-box {
   h3 {
     margin-top: 0;
@@ -175,7 +182,16 @@ p {
   // margin-block-end: 0;
 }
 /* General stylings and helper classes - end */
-
+#background {
+  background-image: url("../assets/img/paper.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-size: 700px;
+  width: var(--center-panel-width);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2rem;
+}
 /* Header stuff - start */
 .header {
   font-family: $special-font;
@@ -186,11 +202,17 @@ p {
 }
 header {
   @extend .header;
-  background-color: $colour-primary;
+  // background-color: $colour-primary;
   padding: $padding__thin;
   padding-top: $padding__standard;
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
+  width: 100%;
+
+  // background-image: url("../assets/img/paper.png");
+  // background-repeat: repeat;
+  // background-attachment: scroll;
+  // background-size: 700px;
 
   .header__item {
   }
@@ -200,7 +222,7 @@ header {
     margin: auto;
     padding-right: $padding__thin;
     max-height: unset;
-    background-color: $colour-primary;
+    // background-color: $colour-primary;
   }
 }
 nav {
@@ -244,14 +266,19 @@ nav {
 
 main {
   font-family: $general-font;
-  width: var(--center-panel-width);
-  background-color: $colour-primary;
+  // width: var(--center-panel-width);
+  // background-color: $colour-primary;
   color: $colour-secondary;
   padding-top: $padding__standard;
   border-bottom-right-radius: 2rem;
   border-bottom-left-radius: 2rem;
 
   margin: auto;
+
+  // background-image: url("../assets/img/paper.png");
+  // background-repeat: repeat;
+  // background-attachment: scroll;
+  // background-size: 700px;
 
   > section {
     padding: $padding__thin;
@@ -530,6 +557,7 @@ main {
       border: transparent solid $margin__thin;
       border-bottom: 0;
       margin-top: calc($margin__standard * 1.25);
+      width: 70%;
 
       img {
         border-radius: 50%;
