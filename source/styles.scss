@@ -149,6 +149,10 @@ p {
   margin-block: calc($padding__thin/2);
 }
 
+a {
+  color: $colour-highlight;
+}
+
 /* Standardise images to aid formatting */
 .img-container {
   display: flex;
@@ -183,7 +187,8 @@ p {
 }
 /* General stylings and helper classes - end */
 #background {
-  background-image: url("../assets/img/paper.png");
+  background-color: $colour-primary;
+  background-image: url("../assets/img/paper.webp");
   background-repeat: repeat;
   background-attachment: scroll;
   background-size: 700px;
@@ -281,7 +286,7 @@ main {
   // background-size: 700px;
 
   > section {
-    padding: $padding__thin;
+    padding: $padding__thin $padding__standard;
     // border-bottom: 0.1rem solid $colour-highlight;
     // margin-bottom: $margin__standard;
   }
@@ -297,7 +302,7 @@ main {
     margin-top: 0;
   }
   h3 {
-    margin-top: $margin__thin;
+    margin-top: $margin__standard;
   }
 
   .home-section__title {
@@ -549,7 +554,7 @@ main {
     overflow: auto;
     // @include flow-container();
     // align-items: center;
-    > .photo {
+    > .photo--oval {
       float: right;
       // clear: left;
       border-radius: 50%;
@@ -564,6 +569,23 @@ main {
         max-height: 40vh;
       }
     }
+
+    > .photo--rect {
+      float: right;
+      border-radius: 10%;
+      margin: $margin__thin;
+      margin-top: 0.3rem;
+      width: 50%;
+      overflow: hidden;
+      max-height: 60vh;
+      img {
+        height: 100%;
+        max-height: 100%;
+        // border-radius: 10%;
+        // max-height: 60vh;
+      }
+    }
+
     p {
       padding-right: $padding__standard;
       margin-block-start: 0;
@@ -649,6 +671,7 @@ footer {
       height: 100%;
       img {
         width: 100%;
+        height: 100%;
       }
     }
   }
@@ -684,6 +707,13 @@ footer {
   .main-logo {
     width: 80% !important;
   }
+  .about-section {
+    #text-img {
+      > .photo--rect {
+        width: 30%;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: $breakpoint__medium) {
@@ -696,6 +726,13 @@ footer {
   .main-logo {
     width: 70% !important;
   }
+  .about-section {
+    #text-img {
+      > .photo--rect {
+        width: 30%;
+      }
+    }
+  }
 }
 @media only screen and (min-width: $breakpoint__large) {
   html {
@@ -706,5 +743,12 @@ footer {
   }
   .main-logo {
     width: 60% !important;
+  }
+  .about-section {
+    #text-img {
+      > .photo--rect {
+        width: 20%;
+      }
+    }
   }
 }
