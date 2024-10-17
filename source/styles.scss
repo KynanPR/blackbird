@@ -325,21 +325,19 @@ main {
     }
 
     > .photo--rect {
-      float: right;
       border-radius: 10%;
-      margin: $margin__thin;
-      margin-top: 0.3rem;
-      width: 50%;
       overflow: hidden;
+      height: 30vh;
       max-height: 60vh;
+      margin-bottom: $margin__thin;
       img {
+        border-radius: 10%;
         height: 100%;
         max-height: 100%;
       }
     }
 
     p {
-      padding-right: $padding__standard;
       margin-block-start: 0;
     }
   }
@@ -449,6 +447,20 @@ footer {
   html {
     font-size: 16px;
   }
+  .about-section {
+    #text-img {
+      > .photo--rect {
+        float: right;
+        width: 30%;
+        height: unset;
+        margin: $margin__thin;
+        margin-top: 0.3rem;
+      }
+      p {
+        padding-right: $padding__standard;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: $breakpoint__small) {
@@ -460,13 +472,6 @@ footer {
   }
   .main-logo {
     width: 80% !important;
-  }
-  .about-section {
-    #text-img {
-      > .photo--rect {
-        width: 30%;
-      }
-    }
   }
 }
 

@@ -233,20 +233,18 @@ main > section {
   max-height: 40vh;
 }
 .about-section #text-img > .photo--rect {
-  float: right;
   border-radius: 10%;
-  margin: 1rem;
-  margin-top: 0.3rem;
-  width: 50%;
   overflow: hidden;
+  height: 30vh;
   max-height: 60vh;
+  margin-bottom: 1rem;
 }
 .about-section #text-img > .photo--rect img {
+  border-radius: 10%;
   height: 100%;
   max-height: 100%;
 }
 .about-section #text-img p {
-  padding-right: 2rem;
   margin-block-start: 0;
 }
 
@@ -356,6 +354,16 @@ footer .footer__extra a {
   html {
     font-size: 16px;
   }
+  .about-section #text-img > .photo--rect {
+    float: right;
+    width: 30%;
+    height: unset;
+    margin: 1rem;
+    margin-top: 0.3rem;
+  }
+  .about-section #text-img p {
+    padding-right: 2rem;
+  }
 }
 @media only screen and (min-width: 768px) {
   html {
@@ -366,9 +374,6 @@ footer .footer__extra a {
   }
   .main-logo {
     width: 80% !important;
-  }
-  .about-section #text-img > .photo--rect {
-    width: 30%;
   }
 }
 @media only screen and (min-width: 992px) {
