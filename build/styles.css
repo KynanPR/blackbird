@@ -19,19 +19,11 @@ body {
   text-align: justify;
 }
 
-.heading-base,
-h4,
-h3,
-h2,
-h1 {
+.heading-base, h4, h3, h2, h1 {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   text-align: center;
 }
-.heading-base::before,
-h4::before,
-h3::before,
-h2::before,
-h1::before {
+.heading-base::before, h4::before, h3::before, h2::before, h1::before {
   content: "";
   background: url("../assets/logos/Leaf_Left.svg");
   background-size: contain;
@@ -40,11 +32,7 @@ h1::before {
   margin-right: 0.2em; /* spacing*/
   padding-left: 1.5em; /* sizing */
 }
-.heading-base::after,
-h4::after,
-h3::after,
-h2::after,
-h1::after {
+.heading-base::after, h4::after, h3::after, h2::after, h1::after {
   content: "";
   background: url("../assets/logos/Leaf_Right.svg");
   background-size: contain;
@@ -71,8 +59,7 @@ h4 {
   text-align: start;
   margin-bottom: 0;
 }
-h4::after,
-h4::before {
+h4::after, h4::before {
   content: none;
 }
 
@@ -98,6 +85,10 @@ a {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
 }
 
 .centered p {
@@ -107,6 +98,7 @@ a {
 .text-box h3 {
   margin-top: 0;
 }
+
 /* General stylings and helper classes - end */
 #background {
   background-color: #f0f1de;
@@ -121,9 +113,7 @@ a {
 }
 
 /* Header stuff - start */
-.header,
-nav,
-header {
+.header, nav, header {
   font-family: "Goudy Bookletter 1911", "Times New Roman", Times, serif;
   z-index: 10;
   width: var(--center-panel-width);
@@ -161,19 +151,19 @@ nav .navigation-list {
   gap: 0rem 1rem;
 }
 nav .navigation-list li {
-  display: inline-block;
+  list-style-type: none;
 }
-nav .navigation-list li a {
+nav .navigation-list a {
   font-variant: small-caps;
   font-weight: 800;
   font-size: 1.5rem;
   text-decoration: none;
   color: inherit;
 }
-nav .navigation-list li a:hover {
+nav .navigation-list a:hover {
   color: #eaeae5;
 }
-nav .navigation-list li a:visited {
+nav .navigation-list a:visited {
   color: #f0f1de;
 }
 
@@ -203,186 +193,23 @@ main > section {
   margin-top: 2rem;
 }
 .home-section .home-section__title {
-	font-size: 3rem;
-	font-weight: bold;
-	text-align: center;
-	margin-block-start: 0;
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 70%;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-block-start: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
 }
 .home-section .home-section__text {
   flex: 1 1;
 }
 .home-section .home-section__text > p {
-	margin-block-start: 0;
+  margin-block-start: 0;
 }
-.home-section .home-section__photo {
-	flex-basis: 20rem;
-	flex: 1 1;
-	min-width: 250px;
-	overflow: hidden;
-}
-.home-section .home-section__photo > img {
-	border-radius: 3rem;
-}
-
-.gallery-section {
-	position: relative;
-	padding-bottom: 0;
-}
-.gallery-section .gallery__collapsible {
-	width: 100%;
-}
-.gallery-section .gallery__collapsible .gallery__photos {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-evenly;
-	align-content: flex-start;
-	gap: 1rem;
-	width: 100%;
-	padding-bottom: 0;
-}
-.gallery-section .gallery__collapsible--collapsed {
-	mask-image: linear-gradient(rgb(0, 0, 0) 80, rgba(0, 0, 0, 0));
-	-webkit-mask-image: linear-gradient(rgb(0, 0, 0) 60%, rgba(0, 0, 0, 0) 95%);
-	overflow-y: hidden;
-	max-height: 15rem;
-}
-.gallery-section .gallery__button {
-  width: 100%;
-  height: 5rem;
-  padding: 1rem;
-  padding-bottom: 0;
-  background: radial-gradient(
-    circle,
-    rgba(240, 241, 222, 0.5),
-    rgba(240, 241, 222, 0)
-  );
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-.gallery-section .gallery__button img {
-	height: 50%;
-	display: block;
-	position: relative;
-}
-.gallery-section .gallery__button #left-twig {
-	transform-origin: bottom left;
-	animation-name: twig-rotate-left-up;
-	animation-duration: 800ms;
-	animation-timing-function: ease-out;
-	animation-fill-mode: both;
-	animation-delay: 0ms;
-	left: 3px;
-}
-@keyframes twig-rotate-left-up {
-	0% {
-		transform: rotate(90deg);
-	}
-	10% {
-		transform: rotate(80deg);
-	}
-	25% {
-		transform: rotate(75deg);
-	}
-	30% {
-		transform: rotate(80deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
-}
-.gallery-section .gallery__button #right-twig {
-	transform-origin: bottom right;
-	animation-name: twig-rotate-right-up;
-	animation-duration: 800ms;
-	animation-timing-function: ease-out;
-	animation-fill-mode: both;
-	animation-delay: 53.3333333333ms;
-}
-@keyframes twig-rotate-right-up {
-	0% {
-		transform: rotate(-90deg);
-	}
-	10% {
-		transform: rotate(-80deg);
-	}
-	25% {
-		transform: rotate(-75deg);
-	}
-	30% {
-		transform: rotate(-80deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
-}
-.gallery-section .gallery__button:hover {
-	cursor: pointer;
-}
-.gallery-section .gallery__button--collapsed {
-	position: absolute;
-	bottom: 0;
-	background: none;
-}
-.gallery-section .gallery__button--collapsed #left-twig {
-	transform-origin: bottom left;
-	animation-name: twig-rotate-left-down;
-	animation-duration: 800ms;
-	animation-timing-function: ease-out;
-	animation-fill-mode: both;
-	animation-delay: 53.3333333333ms;
-}
-@keyframes twig-rotate-left-down {
-	0% {
-		transform: rotate(0deg);
-	}
-	10% {
-		transform: rotate(10deg);
-	}
-	25% {
-		transform: rotate(15deg);
-	}
-	30% {
-		transform: rotate(10deg);
-	}
-	100% {
-		transform: rotate(90deg);
-	}
-}
-.gallery-section .gallery__button--collapsed #right-twig {
-	transform-origin: bottom right;
-	animation-name: twig-rotate-right-down;
-	animation-duration: 800ms;
-	animation-timing-function: ease-out;
-	animation-fill-mode: both;
-	animation-delay: 0ms;
-}
-@keyframes twig-rotate-right-down {
-	0% {
-		transform: rotate(0deg);
-	}
-	10% {
-		transform: rotate(-10deg);
-	}
-	25% {
-		transform: rotate(-15deg);
-	}
-	30% {
-		transform: rotate(-10deg);
-	}
-	100% {
-		transform: rotate(-90deg);
-	}
-}
-
-.pretend-image {
-	display: block;
-	width: 250px;
-	height: 250px;
+.home-section > p {
+  margin-block-start: 0;
 }
 
 .about-section > div {
@@ -518,14 +345,17 @@ footer .footer__extra a {
 }
 
 @media only screen and (max-width: 450px) {
-	html {
-		font-size: 14px;
-	}
+  html {
+    font-size: 14px;
+  }
+  html {
+    font-size: 14px;
+  }
 }
 @media only screen and (min-width: 451px) {
-	html {
-		font-size: 16px;
-	}
+  html {
+    font-size: 16px;
+  }
 }
 @media only screen and (min-width: 768px) {
   html {

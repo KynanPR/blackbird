@@ -19,35 +19,6 @@ $(document).ready(function () {
   });
 });
 
-function loadGallery() {
-  const gallerySection = document.querySelector(".gallery-section");
-  const galleryCollapsible = gallerySection.querySelector(
-    ".gallery__collapsible"
-  );
-  const galleryButton = gallerySection.querySelector(".gallery__button");
-
-  galleryButton.addEventListener("click", toggleState);
-
-  // Defaults to expanded in case JS doesn't load, but as soon as JS loads, colapse it down
-  // Manually add rather than using toggleState() to avoid usual scrolling behaviour
-  galleryButton.classList.add("gallery__button--collapsed");
-  galleryCollapsible.classList.add("gallery__collapsible--collapsed");
-
-  function toggleState() {
-    // const startState = currentState;
-    if (
-      galleryCollapsible.classList.toggle("gallery__collapsible--collapsed")
-    ) {
-      galleryCollapsible.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
-    }
-    galleryButton.classList.toggle("gallery__button--collapsed");
-    console.log("toggled state");
-  }
-}
-
 function SubmitFormData() {
   const name = $("#name").val();
   const email = $("#email").val();
